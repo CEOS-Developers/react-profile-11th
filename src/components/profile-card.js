@@ -1,8 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 export default function ProfileCard({ profile }) {
-  const { name, age, role, univ, major, phoneNum, email, imageUrl } = profile;
+  const {
+    name,
+    age,
+    role,
+    univ,
+    major,
+    phoneNum,
+    email,
+    githubLink,
+    imageUrl
+  } = profile;
   return (
     <Wrapper>
       <Profile>
@@ -19,6 +30,7 @@ export default function ProfileCard({ profile }) {
           <div>
             <Contact>{phoneNum}</Contact>
             <Contact>{email}</Contact>
+            <Github href={githubLink}>{githubLink}</Github>
           </div>
         </Info>
         <Img src={imageUrl} />
@@ -81,4 +93,8 @@ const Contact = styled.div`
 const Img = styled.img`
   width: 40%;
   height: 40%;
+`;
+
+const Github = styled.a`
+  font-size: 1.4rem;
 `;

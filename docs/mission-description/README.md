@@ -43,7 +43,7 @@ https://react-profile-hyo.gywls517.now.sh/
 ## 프로그래밍 요구사항
 
 필수 
-[결과 화면](https://react-profile-hyo.gywls517.now.sh/)
+[결과 화면](https://react-profile-hyo-uqq2t35ex.now.sh/)
 
 - 함수형 컴포넌트를 사용한다.
 - 결과 링크에 접속해 구현해야할 사항들을 파악한 후 README.md의 기존 내용을 지우고 파악한 내용을 적는다.
@@ -55,7 +55,7 @@ https://react-profile-hyo.gywls517.now.sh/
 - prop이름은 항상 camelCase(소문자로 시작)을 사용한다.
 
 선택
-[결과 화면](../result2.png)
+[결과 화면](https://react-profile-hyo.gywls517.now.sh/)
 
 - 부회장 빼고 띄운다.
 - 나이가 어린 순으로 띄운다.

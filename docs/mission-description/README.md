@@ -44,6 +44,7 @@ https://react-profile-hyo.gywls517.now.sh/
 
 필수
 
+- 함수형 컴포넌트를 사용한다.
 - 결과 링크에 접속해 구현해야할 사항들을 파악한 후 README.md의 기존 내용을 지우고 파악한 내용을 적는다.
 - pages/index 안의 profiles 변수 값을 바꾸지 않는다.
 - 결과 링크의 화면 디자인 그대로 구현한다.
@@ -51,11 +52,13 @@ https://react-profile-hyo.gywls517.now.sh/
 - 컴포넌트 이름을 역할이 잘 드러나게 짓는다.
 - CSS : flex, padding, margin을 이용한다.
 - prop이름은 항상 camelCase(소문자로 시작)을 사용한다.
+  [결과 화면](https://react-profile-hyo.gywls517.now.sh/)
 
 선택
 
 - 부회장 빼고 띄운다.
 - 나이가 어린 순으로 띄운다.
+  [결과 화면](../result2.png)
 
 ## 미션 저장소 및 진행 요구사항
 

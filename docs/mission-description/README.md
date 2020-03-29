@@ -29,7 +29,7 @@
 
 ## 진행 방식
 
-- 매주 미션을 진행하기 위해 공부해야 할 자료는 일요일에 공된다.
+- 매주 미션을 진행하기 위해 공부해야 할 자료는 일요일에 공유된다.
 - 매주 진행할 미션은 늦어도 수요일 전에는 공지되고, 그 주 금요일까지 구현을 완료해 해당 레포에 PR 되어야 한다.
 
 ## 미션 제출 방법
@@ -42,7 +42,8 @@ https://react-profile-hyo.gywls517.now.sh/
 
 ## 프로그래밍 요구사항
 
-필수
+필수 
+[결과 화면](https://react-profile-hyo.gywls517.now.sh/)
 
 - 함수형 컴포넌트를 사용한다.
 - 결과 링크에 접속해 구현해야할 사항들을 파악한 후 README.md의 기존 내용을 지우고 파악한 내용을 적는다.
@@ -52,13 +53,12 @@ https://react-profile-hyo.gywls517.now.sh/
 - 컴포넌트 이름을 역할이 잘 드러나게 짓는다.
 - CSS : flex, padding, margin을 이용한다.
 - prop이름은 항상 camelCase(소문자로 시작)을 사용한다.
-  [결과 화면](https://react-profile-hyo.gywls517.now.sh/)
 
 선택
+[결과 화면](../result2.png)
 
 - 부회장 빼고 띄운다.
 - 나이가 어린 순으로 띄운다.
-  [결과 화면](../result2.png)
 
 ## 미션 저장소 및 진행 요구사항
 

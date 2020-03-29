@@ -59,9 +59,13 @@ export default function Home() {
     <Wrapper>
       <Title>CEOS 프론트엔드 운영진</Title>
       <CardsWrapper>
-        {profiles.map(profile => (
-          <ProfileCard key={profile.id} {...{ profile }} />
-        ))}
+        {profiles
+          .sort((a, b) => {
+            return a.age - b.age;
+          })
+          .map(profile => (
+            <ProfileCard key={profile.id} {...{ profile }} />
+          ))}
       </CardsWrapper>
     </Wrapper>
   );

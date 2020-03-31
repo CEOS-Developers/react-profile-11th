@@ -57,10 +57,21 @@ export default function ProfileCard() {
     }
   ];
 
-  return <Wrapper>안녕 나는 프로필 카드</Wrapper>;
+  return (
+    <Wrapper>
+      {profiles[0].name} ({profiles[0].age}){" "}
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.div`
-  background-color: red;
-  font-size: 18px;
+  width: 45%;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  border-image: initial;
+  border-radius: 1.5rem;
 `;

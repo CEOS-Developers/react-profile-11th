@@ -1,4 +1,7 @@
-# react-profile-11th
+# react-profile-11th 유현우
+
+> 배포된 주소 :
+> https://react-profile-11th.puba5.now.sh
 
 ## 실행 방법
 
@@ -31,4 +34,8 @@ npm run start
 
 ## 문제들
 
-1. 의도한 것인지는 모르겠으나 index.js에서 파일 경로가 제대로 되어 있지 않아서 초반에 좀 헤맸습니다. https://react-profile-11th.puba5.now.sh
+1. 의도한 것인지는 모르겠으나 index.js에서 파일 경로가 제대로 되어 있지 않아서 초반에 좀 헤맸습니다.
+
+## 의문점
+
+1. 왜 NEXT.JS를 사용하여 배포를 했을까?? 현재는 백앤드와 연동이 없어서 정적 배포를 하기 위해 그런 것일까??

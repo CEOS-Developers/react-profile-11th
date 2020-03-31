@@ -6,13 +6,16 @@ import styled from "styled-components";
 export default function Home() {
   return (
     <Wrapper>
-      나는 홈이야
+      CEOS 프론트엔드 운영진
       <ProfileCard />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  background-color: blue;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(230, 255, 255);
+  padding: 5rem 10rem;
 `;

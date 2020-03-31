@@ -6,12 +6,14 @@
 npm install
 npm run start
 ```
+
 - npm install : 필요한 모든 패키지를 설치합니다. 처음 1번만 실행하면 됩니다.
 - npm run dev : react 어플리케이션을 브라우저에서 실행합니다.
 
 ## 배포 방법
 
 - now에 회원가입하고 now를 설치합니다.
+
 1. https://zeit.co 에서 회원가입합니다.
 2. 터미널에서 npm i -g now를 입력해 now를 글로벌로 설치합니다.
 3. 명령 프롬프트에서 프로젝트 폴더에 들어간 후 now를 입력합니다.
@@ -26,3 +28,7 @@ npm run start
 ## 미션 제출 방법
 
 [미션 제출 방법](./docs/how-to-submit/README.md)
+
+## 문제들
+
+1. 의도한 것인지는 모르겠으나 index.js에서 파일 경로가 제대로 되어 있지 않아서 초반에 좀 헤맸습니다. https://react-profile-11th.puba5.now.sh

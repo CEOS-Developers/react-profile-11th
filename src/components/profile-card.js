@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { render } from "react-dom";
 
 export default function ProfileCard() {
   const profiles = [
@@ -57,14 +58,50 @@ export default function ProfileCard() {
     }
   ];
 
+  return <Wrapper>{mapToComponent(profiles)}</Wrapper>;
+}
+
+const mapToComponent = data => {
+  return data.map((person, i) => {
+    return <CardTemplate profile={person} key={i} />;
+  });
+};
+
+function CardTemplate(props) {
   return (
-    <Wrapper>
-      {profiles[0].name} ({profiles[0].age}){" "}
-    </Wrapper>
+    <div>
+      <InnerWrapper>
+        <ProfileDescImg>
+          <ProfileDesc profile={props.profile} />
+          <ProfileImg imgUrl={props.profile.imageUrl} />
+        </ProfileDescImg>
+        <ProfileContact profile={props.profile} />
+      </InnerWrapper>
+    </div>
   );
 }
 
+function ProfileDesc(props) {
+  return <div>{props.profile.name}</div>;
+}
+
+function ProfileImg(props) {
+  return <ProfileImage src={props.imgUrl} />;
+}
+
+function ProfileContact(props) {
+  return <div>{props.profile.email}</div>;
+}
+
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+
+const InnerWrapper = styled.div`
   width: 45%;
   background-color: rgb(255, 255, 255);
   margin-bottom: 2rem;
@@ -74,4 +111,17 @@ const Wrapper = styled.div`
   border-color: rgb(204, 204, 204);
   border-image: initial;
   border-radius: 1.5rem;
+`;
+
+const ProfileImage = styled.img`
+  width: 45%;
+  height: 45%;
+`;
+
+const ProfileDescImg = styled.div`
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
 `;

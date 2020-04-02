@@ -75,22 +75,22 @@ function CardTemplate(props) {
           <ProfileDesc profile={props.profile} />
           <ProfileImg imgUrl={props.profile.imageUrl} />
         </ProfileDescImg>
-        <ProfileContact profile={props.profile} />
       </InnerWrapper>
     </div>
   );
 }
 
 function ProfileDesc(props) {
-  return <div>{props.profile.name}</div>;
+  return (
+    <ProfileDesc>
+      <NamePartUniv></NamePartUniv>
+      <ProfileContact></ProfileContact>
+    </ProfileDesc>
+  );
 }
 
 function ProfileImg(props) {
   return <ProfileImage src={props.imgUrl} />;
-}
-
-function ProfileContact(props) {
-  return <div>{props.profile.email}</div>;
 }
 
 const Wrapper = styled.div`
@@ -125,3 +125,6 @@ const ProfileDescImg = styled.div`
   justify-content: space-between;
   margin-bottom: 1.5rem;
 `;
+
+const NamePartUniv = styled.div``;
+const ProfileContact = styled.div``;

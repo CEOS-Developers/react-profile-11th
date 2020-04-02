@@ -81,8 +81,16 @@ function CardTemplate(props) {
 function ProfileDesc(props) {
   return (
     <div>
-      <NamePartUniv>안녕</NamePartUniv>
-      <ProfileContact>하세요</ProfileContact>
+      <NamePartUniv>
+        <div>{props.profile.name}</div>
+        <div>{props.profile.role}</div>
+        <div>{props.profile.univ}</div>
+      </NamePartUniv>
+      <ProfileContact>
+        <div>{props.profile.phoneNum}</div>
+        <div>{props.profile.email}</div>
+        <a href={props.profile.githubLink}>{props.profile.githubLink}</a>
+      </ProfileContact>
     </div>
   );
 }
@@ -125,8 +133,8 @@ const ProfileDescImg = styled.div`
 `;
 
 const NamePartUniv = styled.div`
-  font-size: 2.8rem;
+  font-size: 1.5rem;
 `;
 const ProfileContact = styled.div`
-  font-size: 2.8rem;
+  font-size: 1.5rem;
 `;

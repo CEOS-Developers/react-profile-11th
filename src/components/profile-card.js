@@ -65,6 +65,7 @@ const mapToComponent = profiles => {
   // 나이 순으로 정렬
   profiles.sort((a, b) => a.age - b.age);
   return profiles.map((profileData, i) => {
+    // 부회장을 제외하기 위한 조건문
     if (profileData.role !== "부회장")
       return <CardTemplate profile={profileData} key={i} />;
   });

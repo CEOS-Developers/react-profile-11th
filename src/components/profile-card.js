@@ -69,23 +69,21 @@ const mapToComponent = data => {
 
 function CardTemplate(props) {
   return (
-    <div>
-      <InnerWrapper>
-        <ProfileDescImg>
-          <ProfileDesc profile={props.profile} />
-          <ProfileImg imgUrl={props.profile.imageUrl} />
-        </ProfileDescImg>
-      </InnerWrapper>
-    </div>
+    <InnerWrapper>
+      <ProfileDescImg>
+        <ProfileDesc profile={props.profile} />
+        <ProfileImg imgUrl={props.profile.imageUrl} />
+      </ProfileDescImg>
+    </InnerWrapper>
   );
 }
 
 function ProfileDesc(props) {
   return (
-    <ProfileDesc>
-      <NamePartUniv></NamePartUniv>
-      <ProfileContact></ProfileContact>
-    </ProfileDesc>
+    <div>
+      <NamePartUniv>안녕</NamePartUniv>
+      <ProfileContact>하세요</ProfileContact>
+    </div>
   );
 }
 
@@ -126,5 +124,9 @@ const ProfileDescImg = styled.div`
   margin-bottom: 1.5rem;
 `;
 
-const NamePartUniv = styled.div``;
-const ProfileContact = styled.div``;
+const NamePartUniv = styled.div`
+  font-size: 2.8rem;
+`;
+const ProfileContact = styled.div`
+  font-size: 2.8rem;
+`;

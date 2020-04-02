@@ -61,9 +61,12 @@ export default function ProfileCard() {
   return <Wrapper>{mapToComponent(profiles)}</Wrapper>;
 }
 
-const mapToComponent = data => {
-  return data.map((person, i) => {
-    return <CardTemplate profile={person} key={i} />;
+const mapToComponent = profiles => {
+  // 나이 순으로 정렬
+  profiles.sort((a, b) => a.age - b.age);
+  return profiles.map((profileData, i) => {
+    if (profileData.role !== "부회장")
+      return <CardTemplate profile={profileData} key={i} />;
   });
 };
 
@@ -74,24 +77,31 @@ function CardTemplate(props) {
         <ProfileDesc profile={props.profile} />
         <ProfileImg imgUrl={props.profile.imageUrl} />
       </ProfileDescImg>
+      <ClubName>신촌 연합 IT 창업 동아리 CEOS</ClubName>
     </InnerWrapper>
   );
 }
 
 function ProfileDesc(props) {
   return (
-    <div>
-      <NamePartUniv>
-        <div>{props.profile.name}</div>
-        <div>{props.profile.role}</div>
-        <div>{props.profile.univ}</div>
-      </NamePartUniv>
-      <ProfileContact>
-        <div>{props.profile.phoneNum}</div>
-        <div>{props.profile.email}</div>
-        <a href={props.profile.githubLink}>{props.profile.githubLink}</a>
-      </ProfileContact>
-    </div>
+    <DescWrapper>
+      <div>
+        <Name>
+          {props.profile.name}({props.profile.age})
+        </Name>
+        <Part>{props.profile.role}</Part>
+        <Univ>
+          {props.profile.univ}대학교 {props.profile.major}과
+        </Univ>
+      </div>
+      <div>
+        <PhoneNum>{props.profile.phoneNum}</PhoneNum>
+        <Email>{props.profile.email}</Email>
+        <GithubLink href={props.profile.githubLink}>
+          {props.profile.githubLink}
+        </GithubLink>
+      </div>
+    </DescWrapper>
   );
 }
 
@@ -120,8 +130,8 @@ const InnerWrapper = styled.div`
 `;
 
 const ProfileImage = styled.img`
-  width: 45%;
-  height: 45%;
+  width: 40%;
+  height: 40s%;
 `;
 
 const ProfileDescImg = styled.div`
@@ -133,8 +143,47 @@ const ProfileDescImg = styled.div`
 `;
 
 const NamePartUniv = styled.div`
-  font-size: 1.5rem;
+  box-sizing: border-box;
 `;
 const ProfileContact = styled.div`
-  font-size: 1.5rem;
+  box-sizing: border-box;
+`;
+
+const ClubName = styled.div`
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 1.6rem;
+`;
+const DescWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  width: 50%;
+`;
+
+const Name = styled.div`
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+`;
+const Univ = styled.div`
+  font-size: 1.4rem;
+`;
+const Part = styled.div`
+  font-size: 1.4rem;
+  font-weight: bold;
+`;
+const PhoneNum = styled.div`
+  font-size: 1.4rem;
+  color: rgb(0, 0, 153);
+`;
+const Email = styled.div`
+  font-size: 1.4rem;
+  color: rgb(0, 0, 153);
+`;
+const GithubLink = styled.a`
+  font-size: 1.4rem;
 `;

@@ -80,7 +80,7 @@ const Img = styled.div`
 	width: 40%;
 	height: 40%;
 `;
-export const Row = styled.div`
+const Row = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;

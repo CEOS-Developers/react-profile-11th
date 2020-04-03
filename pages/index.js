@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProfileCard, { Prop, Row } from "../src/components/profile-card";
+import ProfileCard, { Prop } from "../src/components/profile-card";
 import styled from "styled-components";
 import { render } from "react-dom";
 const profiles = [
@@ -82,15 +82,13 @@ export default function Home() {
 	return (
 		<Bg>
 			<Subject>CEOS 프론트엔드 운영진</Subject>
-			<Row>
-				<Wrapper>{List[0]}</Wrapper>
 
-				<Wrapper>{List[1]}</Wrapper>
-			</Row>
-			<Row>
-				<Wrapper>{List[2]}</Wrapper>
-				<Wrapper>{List[3]}</Wrapper>
-			</Row>
+			<Wrapper>{List[0]}</Wrapper>
+
+			<Wrapper>{List[1]}</Wrapper>
+
+			<Wrapper>{List[2]}</Wrapper>
+			<Wrapper>{List[3]}</Wrapper>
 		</Bg>
 	);
 }

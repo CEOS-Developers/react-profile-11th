@@ -26,13 +26,7 @@ export default function ProfileCard (props) {
 }
 
 //styled-component로 CSS
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    flex-wrap: wrap;
-`;
+
 const Personal = styled.div`
     display: block;
 

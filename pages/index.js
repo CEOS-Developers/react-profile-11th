@@ -9,12 +9,14 @@ export default function Home() {
   return (
     <Wrapper>
       <Title>CEOS 프론트엔드 운영진</Title>
-      {Info(profiles)}
+      <CardArea>
+       {Info(profiles)}
+      </CardArea>
     </Wrapper>
   );
 }
 
-//profiles 분리
+//profiles 하나씩 넘기기
 const Info = profiles => {
   return profiles.map((data, i) => {
         return <ProfileCard single={data} key={i} />
@@ -84,6 +86,13 @@ const Wrapper = styled.div`
   background-color: rgb(230, 255, 255);
   padding: 5rem 10rem;
   `;
+const CardArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`
 const Title = styled.div`
   font-size: 2.8rem;
   margin-bottom: 2rem;

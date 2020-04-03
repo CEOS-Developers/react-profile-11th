@@ -57,10 +57,124 @@ export default function ProfileCard() {
     }
   ];
 
-  return <Wrapper>안녕 나는 프로필 카드</Wrapper>;
+
+  return (
+    <Wrapper>
+      {Info(profiles)}
+    </Wrapper>
+  );
+
 }
 
+//profiles 분리
+const Info = profiles => {
+  return profiles.map((singleInfo, id) => {
+    return Card(singleInfo);
+  }
+  )
+}
+
+//Card 민들어서 페이지에 출력
+function Card(singleInfo) {
+  return (
+    <CardWrapper>
+      <ImageContents>
+        <Contents>
+          <Personal>
+            <Name>{singleInfo.name} ({singleInfo.age})</Name>
+            <Role>{singleInfo.role}</Role>
+            <UnivInfo>{singleInfo.univ}대학교 {singleInfo.major}과</UnivInfo>
+          </Personal>
+          <Contect>
+            <Phone>{singleInfo.phoneNum}</Phone>
+            <Email> {singleInfo.email}</Email>
+            <Git> <a href={singleInfo.githubLink}>{singleInfo.githubLink}</a></Git>
+          </Contect>
+        </Contents>
+        <Image><img src={singleInfo.imageUrl} width="100%"></img></Image>
+      </ImageContents>
+      <Ceos> 신촌 연합 IT 창업 동아리 CEOS</Ceos>
+    </CardWrapper>
+  );
+
+}
+
+//styled-component로 구현한 CSS
+const Personal = styled.div`
+    display: block;
+
+`
+const Contect = styled.div`
+    display: block;
+
+`
+const ImageContents = styled.div`
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+`
+const Contents = styled.div`
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 50%;
+`
+const Name = styled.div`
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+`
+const Role = styled.div`
+    font-size: 1.4rem;
+    font-weight: bold;
+`
+const UnivInfo = styled.div`
+    font-size: 1.4rem;
+`
+const Phone = styled.div`
+    font-size: 1.4rem;
+    color: rgb(0, 0, 153);
+`
+const Email = styled.div`
+    font-size: 1.4rem;
+    color: rgb(0, 0, 153);
+`
+const Git = styled.div`
+    font-size: 1.4rem;
+`
+const Image = styled.div`
+    width: 40%;
+    height: 40%;
+`
+const Ceos = styled.div`
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 1.6rem;
+`
+const CardWrapper = styled.div`
+    width: 45%;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    border-radius: 1.5rem;
+`;
 const Wrapper = styled.div`
-  background-color: red;
-  font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+`;
+const img = styled.div`
+    width: 40%;
+    height: 40%;
 `;

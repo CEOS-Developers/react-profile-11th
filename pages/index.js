@@ -74,22 +74,22 @@ export default function Home() {
 	));
 
 	//return <div>{List}</div>;//4개한번에 다나옴.
-	const [id_1, id1] = useState(List[0]);
-	const [id_2, id2] = useState(List[1]);
-	const [id_3, id3] = useState(List[2]);
-	const [id_4, id4] = useState(List[3]);
+	//const [id_1, id1] = useState(List[0]);
+	//const [id_2, id2] = useState(List[1]);
+	//const [id_3, id3] = useState(List[2]);
+	//const [id_4, id4] = useState(List[3]);
 
 	return (
 		<Bg>
 			<Subject>CEOS 프론트엔드 운영진</Subject>
 			<Row>
-				<Wrapper>{id_1}</Wrapper>
+				<Wrapper>{List[0]}</Wrapper>
 
-				<Wrapper>{id_2}</Wrapper>
+				<Wrapper>{List[1]}</Wrapper>
 			</Row>
 			<Row>
-				<Wrapper>{id_3}</Wrapper>
-				<Wrapper>{id_4}</Wrapper>
+				<Wrapper>{List[2]}</Wrapper>
+				<Wrapper>{List[3]}</Wrapper>
 			</Row>
 		</Bg>
 	);

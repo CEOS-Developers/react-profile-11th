@@ -20,7 +20,6 @@ class PickkApp extends App {
           body {
             margin: 0;
             padding: 0;
-            font-size: 0.1rem;
             overflow-x: hidden;
             width: 100%;
           }

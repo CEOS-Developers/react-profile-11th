@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { render } from "react-dom";
 
 export default function ProfileCard(props) {
   return (
@@ -46,16 +45,13 @@ const CardWrapper = styled.div`
   background-color: rgb(255, 255, 255);
   margin-bottom: 2rem;
   padding: 1.5rem;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(204, 204, 204);
-  border-image: initial;
+  border: 1px solid rgb(204, 204, 204);
   border-radius: 1.5rem;
 `;
 
 const ProfileImage = styled.img`
   width: 40%;
-  height: 40s%;
+  height: 40%;
 `;
 
 const ProfileDescImg = styled.div`
@@ -64,13 +60,6 @@ const ProfileDescImg = styled.div`
   -webkit-box-pack: justify;
   justify-content: space-between;
   margin-bottom: 1.5rem;
-`;
-
-const NamePartUniv = styled.div`
-  box-sizing: border-box;
-`;
-const ProfileContact = styled.div`
-  box-sizing: border-box;
 `;
 
 const ClubName = styled.div`

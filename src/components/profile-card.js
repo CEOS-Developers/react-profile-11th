@@ -46,12 +46,8 @@ export default function ProfileCard(props) {
 
 //styled-component로 CSS
 
-const Personal = styled.div`
-  display: block;
-`;
-const Contect = styled.div`
-  display: block;
-`;
+const Personal = styled.div``;
+const Contect = styled.div``;
 const ImageContents = styled.div`
   display: flex;
   flex-direction: row;
@@ -103,9 +99,6 @@ const CardWrapper = styled.div`
   background-color: rgb(255, 255, 255);
   margin-bottom: 2rem;
   padding: 1.5rem;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(204, 204, 204);
-  border-image: initial;
+  boder: 1px solid rgb(204, 204, 204);
   border-radius: 1.5rem;
 `;

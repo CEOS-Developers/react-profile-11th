@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function ProfileCard() {
-	return <div></div>;
-}
-export function Prop({
+import Home from "../../pages/index";
+
+export default function ProfileCard(
 	id,
 	name,
 	age,
@@ -15,9 +14,9 @@ export function Prop({
 	email,
 	githubLink,
 	imageUrl
-}) {
+) {
 	return (
-		<div>
+		<Wrapper>
 			<Row>
 				<Char>
 					<Info>
@@ -26,28 +25,38 @@ export function Prop({
 						</Name>
 
 						<strong>{role}</strong>
-						<div>
+						<p>
 							{univ}대학교 {major}과
-						</div>
+						</p>
 					</Info>
 					<Li>
-						<div>{phoneNum}</div>
-						<div>{email}</div>
-						<div>
+						<p>{phoneNum}</p>
+						<p>{email}</p>
+						<p>
 							<a href={githubLink}>{githubLink}</a>
-						</div>
+						</p>
 					</Li>
 				</Char>
 
-				<Img>
-					<img src={imageUrl} width="100%" />
-				</Img>
+				<Img src={imageUrl} />
 			</Row>
 
-			<CEOS> 신촌 연합 IT 창업 동아리 CEOS</CEOS>
-		</div>
+			<Ceos> 신촌 연합 IT 창업 동아리 CEOS</Ceos>
+		</Wrapper>
 	);
 }
+
+const Wrapper = styled.div`
+	width: 45%;
+	background-color: rgb(255, 255, 255);
+	margin-bottom: 20px;
+	border-image: initial;
+	padding: 15px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(204, 204, 204);
+	border-radius: 15px;
+`;
 
 const Char = styled.div`
 	display: flex;
@@ -69,14 +78,14 @@ const Li = styled.div`
 	color: rgb(0, 0, 153);
 `;
 
-const CEOS = styled.div`
+const Ceos = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	font-size: 1.6rem;
 `;
 
-const Img = styled.div`
+const Img = styled.img`
 	width: 40%;
 	height: 40%;
 `;

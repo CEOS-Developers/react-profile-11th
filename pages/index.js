@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import ProfileCard, { Prop } from "../src/components/profile-card";
-import styled from "styled-components";
+import React from "react";
 import { render } from "react-dom";
+import styled from "styled-components";
+
+import ProfileCard from "../src/components/profile-card";
+
 const profiles = [
 	{
 		id: 1,
@@ -58,64 +60,12 @@ const profiles = [
 ];
 
 export default function Home() {
-	let List = profiles.map((prop) => (
-		<Prop
-			id={prop.id}
-			name={prop.name}
-			age={prop.age}
-			role={prop.role}
-			univ={prop.univ}
-			major={prop.major}
-			phoneNum={prop.phoneNum}
-			email={prop.email}
-			githubLink={prop.githubLink}
-			imageUrl={prop.imageUrl}
-		/>
-	));
+	const List = profiles.map((prop) => <ProfileCard key={prop.id} {...prop} />);
 
-	//return <div>{List}</div>;//4개한번에 다나옴.
-	//const [id_1, id1] = useState(List[0]);
-	//const [id_2, id2] = useState(List[1]);
-	//const [id_3, id3] = useState(List[2]);
-	//const [id_4, id4] = useState(List[3]);
-
-	return (
-		<Bg>
-			<Subject>CEOS 프론트엔드 운영진</Subject>
-
-			<Wrapper>{List[0]}</Wrapper>
-
-			<Wrapper>{List[1]}</Wrapper>
-
-			<Wrapper>{List[2]}</Wrapper>
-			<Wrapper>{List[3]}</Wrapper>
-		</Bg>
-	);
+	return <CardSection>{List}</CardSection>;
 }
-
-const Wrapper = styled.div`
-	width: 45%;
-	background-color: rgb(255, 255, 255);
-	margin-bottom: 20px;
-	border-image: initial;
-	padding: 15px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: rgb(204, 204, 204);
-	border-radius: 15px;
-`;
-const Subject = styled.div`
-	font-size: 28px;
-	margin-bottom: 20px;
-	width: 100%;
-`;
-
-const Bg = styled.div`
-	background-color: rgb(230, 255, 255);
-	padding: 50px 100px;
+const CardSection = styled.div`
 	display: flex;
-	flex-direction: row;
-	min-height: 100%;
+	flex-flow: row wrap;
 	justify-content: space-between;
-	flex-wrap: wrap;
 `;

@@ -2,6 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 export default function ProfileCard(props) {
+  return (
+    <CardWrapper>
+      <ProfileDescImg>
+        <ProfileDesc {...props} />
+        <ProfileImg {...props} />
+      </ProfileDescImg>
+      <ClubName>신촌 연합 IT 창업 동아리 CEOS</ClubName>
+    </CardWrapper>
+  );
+}
+
+function ProfileDesc(props) {
+  console.log(props);
   const {
     id,
     name,
@@ -15,41 +28,28 @@ export default function ProfileCard(props) {
     imageUrl,
   } = props;
   return (
-    <CardWrapper>
-      <ProfileDescImg>
-        <ProfileDesc profile={props} />
-        <ProfileImg imgUrl={imageUrl} />
-      </ProfileDescImg>
-      <ClubName>신촌 연합 IT 창업 동아리 CEOS</ClubName>
-    </CardWrapper>
-  );
-}
-
-function ProfileDesc(props) {
-  return (
     <DescWrapper>
       <div>
         <Name>
-          {props.profile.name}({props.profile.age})
+          {name}({age})
         </Name>
-        <Part>{props.profile.role}</Part>
+        <Part>{role}</Part>
         <Univ>
-          {props.profile.univ}대학교 {props.profile.major}과
+          {univ}대학교 {major}과
         </Univ>
       </div>
       <div>
-        <PhoneNum>{props.profile.phoneNum}</PhoneNum>
-        <Email>{props.profile.email}</Email>
-        <GithubLink href={props.profile.githubLink}>
-          {props.profile.githubLink}
-        </GithubLink>
+        <PhoneNum>{phoneNum}</PhoneNum>
+        <Email>{email}</Email>
+        <GithubLink href={githubLink}>{githubLink}</GithubLink>
       </div>
     </DescWrapper>
   );
 }
 
 function ProfileImg(props) {
-  return <ProfileImage src={props.imgUrl} />;
+  const { imageUrl } = props;
+  return <ProfileImage src={imageUrl} />;
 }
 
 const CardWrapper = styled.div`

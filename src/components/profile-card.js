@@ -1,15 +1,39 @@
 import React from "react";
 import styled from "styled-components";
 
-import ProfileDesc from "./profile-desc";
-import ProfileImg from "./profile-img";
-
 export default function ProfileCard(props) {
+  const {
+    id,
+    name,
+    age,
+    role,
+    univ,
+    major,
+    phoneNum,
+    email,
+    githubLink,
+    imageUrl,
+  } = props;
   return (
     <CardWrapper>
       <ProfileDescImg>
-        <ProfileDesc {...props} />
-        <ProfileImg {...props} />
+        <DescWrapper>
+          <div>
+            <Name>
+              {name}({age})
+            </Name>
+            <Part>{role}</Part>
+            <Univ>
+              {univ}대학교 {major}과
+            </Univ>
+          </div>
+          <div>
+            <PhoneNum>{phoneNum}</PhoneNum>
+            <Email>{email}</Email>
+            <GithubLink href={githubLink}>{githubLink}</GithubLink>
+          </div>
+        </DescWrapper>
+        <ProfileImage src={imageUrl} />
       </ProfileDescImg>
       <ClubName>신촌 연합 IT 창업 동아리 CEOS</ClubName>
     </CardWrapper>
@@ -39,4 +63,41 @@ const ClubName = styled.div`
   -webkit-box-align: center;
   align-items: center;
   font-size: 1.6rem;
+`;
+
+const ProfileImage = styled.img`
+  width: 40%;
+  height: 40%;
+`;
+
+const DescWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  width: 50%;
+`;
+
+const Name = styled.div`
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+`;
+const Univ = styled.div`
+  font-size: 1.4rem;
+`;
+const Part = styled.div`
+  font-size: 1.4rem;
+  font-weight: bold;
+`;
+const PhoneNum = styled.div`
+  font-size: 1.4rem;
+  color: rgb(0, 0, 153);
+`;
+const Email = styled.div`
+  font-size: 1.4rem;
+  color: rgb(0, 0, 153);
+`;
+const GithubLink = styled.a`
+  font-size: 1.4rem;
 `;

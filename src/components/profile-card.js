@@ -2,30 +2,41 @@ import React from "react";
 import styled from "styled-components";
 
 export default function ProfileCard(props) {
+  const {
+    name,
+    age,
+    role,
+    univ,
+    major,
+    phoneNum,
+    email,
+    githubLink,
+    imageUrl,
+  } = props.profile;
   return (
     <CardWrapper>
       <ImageContents>
         <Contents>
           <Personal>
             <Name>
-              {props.profile.name} ({props.profile.age})
+              {name} ({age})
             </Name>
-            <Role>{props.profile.role}</Role>
+            <Role>{role}</Role>
             <UnivInfo>
-              {props.profile.univ}대학교 {props.profile.major}과
+              {univ}대학교 {major}과
             </UnivInfo>
           </Personal>
           <Contect>
-            <Phone>{props.profile.phoneNum}</Phone>
-            <Email> {props.profile.email}</Email>
+            <Phone>{phoneNum}</Phone>
+            <Email> {email}</Email>
             <Git>
               {" "}
-              <a href={props.profile.githubLink}>{props.profile.githubLink}</a>
+              <a href={githubLink}>{githubLink}</a>
             </Git>
           </Contect>
         </Contents>
         <Image>
-          <img src={props.profile.imageUrl} width="100%"></img>
+          <img src={imageUrl} width="100%"></img>
         </Image>
       </ImageContents>
       <ClubName> 신촌 연합 IT 창업 동아리 CEOS</ClubName>

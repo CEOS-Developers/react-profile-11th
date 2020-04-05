@@ -6,7 +6,6 @@
 npm install
 npm run dev
 ```
-
 - npm install : 필요한 모든 패키지를 설치합니다. 처음 1번만 실행하면 됩니다.
 - npm run dev : react 어플리케이션을 브라우저에서 실행합니다.
 

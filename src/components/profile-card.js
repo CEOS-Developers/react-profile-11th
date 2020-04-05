@@ -53,7 +53,7 @@ const Contents = styled.div`
   justify-content: space-between;
   width: 50%;
 `;
-const Name = styled.div`
+const Name = styled.p`
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -73,7 +73,7 @@ const Email = styled.div`
   font-size: 1.4rem;
   color: rgb(0, 0, 153);
 `;
-const Git = styled.div`
+const Git = styled.a`
   font-size: 1.4rem;
 `;
 const Image = styled.div`

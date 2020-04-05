@@ -8,27 +8,27 @@ export default function ProfileCard(props) {
         <Contents>
           <Personal>
             <Name>
-              {props.single.name} ({props.single.age})
+              {props.profile.name} ({props.profile.age})
             </Name>
-            <Role>{props.single.role}</Role>
+            <Role>{props.profile.role}</Role>
             <UnivInfo>
-              {props.single.univ}대학교 {props.single.major}과
+              {props.profile.univ}대학교 {props.profile.major}과
             </UnivInfo>
           </Personal>
           <Contect>
-            <Phone>{props.single.phoneNum}</Phone>
-            <Email> {props.single.email}</Email>
+            <Phone>{props.profile.phoneNum}</Phone>
+            <Email> {props.profile.email}</Email>
             <Git>
               {" "}
-              <a href={props.single.githubLink}>{props.single.githubLink}</a>
+              <a href={props.profile.githubLink}>{props.profile.githubLink}</a>
             </Git>
           </Contect>
         </Contents>
         <Image>
-          <img src={props.single.imageUrl} width="100%"></img>
+          <img src={props.profile.imageUrl} width="100%"></img>
         </Image>
       </ImageContents>
-      <Ceos> 신촌 연합 IT 창업 동아리 CEOS</Ceos>
+      <ClubName> 신촌 연합 IT 창업 동아리 CEOS</ClubName>
     </CardWrapper>
   );
 }
@@ -44,14 +44,12 @@ const Contect = styled.div`
 const ImageContents = styled.div`
   display: flex;
   flex-direction: row;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   margin-bottom: 1.5rem;
 `;
 const Contents = styled.div`
   display: flex;
   flex-direction: column;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   width: 50%;
 `;
@@ -82,7 +80,7 @@ const Image = styled.div`
   width: 40%;
   height: 40%;
 `;
-const Ceos = styled.div`
+const ClubName = styled.div`
   display: flex;
   flex-direction: column;
   -webkit-box-align: center;
@@ -99,9 +97,4 @@ const CardWrapper = styled.div`
   border-color: rgb(204, 204, 204);
   border-image: initial;
   border-radius: 1.5rem;
-`;
-
-const img = styled.div`
-  width: 40%;
-  height: 40%;
 `;

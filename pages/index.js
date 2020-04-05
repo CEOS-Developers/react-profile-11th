@@ -15,7 +15,7 @@ export default function Home() {
 //profiles 하나씩 넘기기
 const Info = (profiles) => {
   return profiles.map((data, i) => {
-    return <ProfileCard single={data} key={i} />;
+    return <ProfileCard profile={data} key={i} />;
   });
 };
 

@@ -61,6 +61,68 @@ export default function ProfileCard() {
 }
 
 const Wrapper = styled.div`
-  background-color: red;
-  font-size: 18px;
+  width: 45%;
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 1.5rem;
+`;
+
+const ClubName = styled.p`
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0rem;
+`;
+
+const ProfileWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+`;
+
+const InfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+`;
+
+const Space = styled.div`
+  flex: 1;
+`;
+
+const Name = styled.p`
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin: 0rem;
+`;
+
+const Role = styled.p`
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0rem;
+`;
+
+const Univ = styled.p`
+  font-size: 1.4rem;
+  margin: 0rem;
+`;
+
+const Contact = styled.p`
+  font-size: 1.4rem;
+  color: #009;
+  margin: 0rem;
+`;
+
+const Img = styled.img`
+  width: 20rem;
+  height: 20rem;
+`;
+
+const Github = styled.a`
+  font-size: 1.4rem;
 `;

@@ -11,7 +11,7 @@ export default function Home() {
           CEOS 프론트엔드 운영진
         </Header>
         <Main>
-         {Profile(profiles)}
+         {isProfileCard()}
         </Main>
       </Wrapper>
   );
@@ -72,17 +72,13 @@ const profiles = [
      }
 ] 
 
-const Profile = () => {
-    
-    const profile = profiles.filter(profile => profile.role != "부회장");
-    profile.sort((a, b) => a.age - b.age);
-
-    return(   
-      profile.map((pro,key) => (
-          <ProfileCard info = {pro} key ={profile.id}/>
-      ))
-    );
-  }
+const isProfileCard = () => {
+  return(
+     profiles.filter(profile => profile.role !== "부회장")
+     .sort((a, b) => a.age - b.age)
+     .map(profile => (<ProfileCard info = {profile} key = {profile.id}/>))
+  );
+}
   
 const Wrapper = styled.div`
 display: flex;

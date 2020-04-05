@@ -1,18 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function ProfileCard(props) {
-  const {
-    name,
-    age,
-    role,
-    univ,
-    major,
-    phoneNum,
-    email,
-    githubLink,
-    imageUrl,
-  } = props.profile;
+export default function ProfileCard({
+  name,
+  age,
+  role,
+  univ,
+  major,
+  phoneNum,
+  email,
+  githubLink,
+  imageUrl,
+}) {
   return (
     <CardWrapper>
       <ImageContents>

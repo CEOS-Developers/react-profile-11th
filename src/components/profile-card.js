@@ -1,40 +1,38 @@
 import React from "react";
 import styled from "styled-components";
-import Link from "next/link";
 
-export default function ProfileCard({ profile }) {
-  const {
-    name,
-    age,
-    role,
-    univ,
-    major,
-    phoneNum,
-    email,
-    githubLink,
-    imageUrl
-  } = profile;
+export default function ProfileCard({
+  name,
+  age,
+  role,
+  univ,
+  major,
+  phoneNum,
+  email,
+  githubLink,
+  imageUrl,
+}) {
   return (
     <Wrapper>
-      <Profile>
-        <Info>
-          <div>
-            <Name>
-              {name}({age})
-            </Name>
-            <Role>{role}</Role>
-            <BelongsTo>
-              {univ}대학교 {major}과
-            </BelongsTo>
-          </div>
-          <div>
-            <Contact>{phoneNum}</Contact>
-            <Contact>{email}</Contact>
-            <Github href={githubLink}>{githubLink}</Github>
-          </div>
-        </Info>
+      <ProfileWrapper>
+        <InfoWrapper>
+          <Name>
+            {name}({age})
+          </Name>
+          <Role>{role}</Role>
+          <Univ>
+            {univ}대학교 {major}과
+          </Univ>
+          <Space />
+          <Contact>
+            {phoneNum}
+            <br />
+            {email}
+          </Contact>
+          <Github href={githubLink}>{githubLink}</Github>
+        </InfoWrapper>
         <Img src={imageUrl} />
-      </Profile>
+      </ProfileWrapper>
       <ClubName>신촌 연합 IT 창업 동아리 CEOS</ClubName>
     </Wrapper>
   );
@@ -49,50 +47,58 @@ const Wrapper = styled.div`
   border-radius: 1.5rem;
 `;
 
-const ClubName = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const ClubName = styled.p`
+  width: 100%;
+  text-align: center;
   font-size: 1.6rem;
+  margin: 0rem;
 `;
 
-const Profile = styled.div`
+const ProfileWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 1.5rem;
 `;
 
-const Info = styled.div`
+const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
 `;
 
-const Name = styled.div`
+const Space = styled.div`
+  flex: 1;
+`;
+
+const Name = styled.p`
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  margin: 0rem;
 `;
 
-const Role = styled.div`
+const Role = styled.p`
   font-size: 1.4rem;
   font-weight: bold;
+  margin: 0rem;
 `;
 
-const BelongsTo = styled.div`
+const Univ = styled.p`
   font-size: 1.4rem;
+  margin: 0rem;
 `;
 
-const Contact = styled.div`
+const Contact = styled.p`
   font-size: 1.4rem;
   color: #009;
+  margin: 0rem;
 `;
 
 const Img = styled.img`
-  width: 40%;
-  height: 40%;
+  width: 20rem;
+  height: 20rem;
 `;
 
 const Github = styled.a`

@@ -16,7 +16,7 @@ export default function ProfileCard(props) {
   } = props;
   return (
     <CardWrapper>
-      <ProfileDescImg>
+      <Profile>
         <DescWrapper>
           <div>
             <Name>
@@ -34,7 +34,7 @@ export default function ProfileCard(props) {
           </div>
         </DescWrapper>
         <ProfileImage src={imageUrl} />
-      </ProfileDescImg>
+      </Profile>
       <ClubName>신촌 연합 IT 창업 동아리 CEOS</ClubName>
     </CardWrapper>
   );
@@ -49,10 +49,9 @@ const CardWrapper = styled.div`
   border-radius: 1.5rem;
 `;
 
-const ProfileDescImg = styled.div`
+const Profile = styled.div`
   display: flex;
   flex-direction: row;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   margin-bottom: 1.5rem;
 `;

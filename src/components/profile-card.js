@@ -1,9 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Home from "../../pages/index";
-
-export default function ProfileCard(
+export default function ProfileCard({
 	id,
 	name,
 	age,
@@ -14,7 +12,7 @@ export default function ProfileCard(
 	email,
 	githubLink,
 	imageUrl
-) {
+}) {
 	return (
 		<Wrapper>
 			<Row>
@@ -23,18 +21,17 @@ export default function ProfileCard(
 						<Name>
 							{name}({age})
 						</Name>
-
 						<strong>{role}</strong>
-						<p>
+						<div>
 							{univ}대학교 {major}과
-						</p>
+						</div>
 					</Info>
 					<Li>
-						<p>{phoneNum}</p>
-						<p>{email}</p>
-						<p>
+						<div>{phoneNum}</div>
+						<div>{email}</div>
+						<div>
 							<a href={githubLink}>{githubLink}</a>
-						</p>
+						</div>
 					</Li>
 				</Char>
 
@@ -63,7 +60,6 @@ const Char = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	width: 50%;
-	margin-bottom: 1.5rem;
 `;
 const Info = styled.div`
 	font-size: 14px;

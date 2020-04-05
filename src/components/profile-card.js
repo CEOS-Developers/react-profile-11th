@@ -1,28 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function ProfileCard (props) {
+export default function ProfileCard({
+        name,
+        age,
+        role,
+        univ,
+        major,
+        phoneNum,
+        email,
+        githubLink,
+        imageUrl,
+}) {
+
   return (
     <Wrapper>
     <InfoBox>
       <InfoMain>
         <MainTop>
-          <Name_Age>{props.info.name} ({props.info.age})</Name_Age>
-          <Role>{props.info.role}</Role>
-          <Univ_Major>{props.info.univ}대학교 {props.info.major}과</Univ_Major>
+          <Name_Age>{name} ({age})</Name_Age>
+          <Role>{role}</Role>
+          <Univ_Major>{univ}대학교 {major}과</Univ_Major>
         </MainTop>
         <MainBottom>
-          <PhoneNum>{props.info.phoneNum}</PhoneNum>
-          <Email> {props.info.email}</Email>
-          <GitLink href={props.info.githubLink}>{props.info.githubLink}</GitLink>
+          <PhoneNum>{phoneNum}</PhoneNum>
+          <Email> {email}</Email>
+          <GitLink href={githubLink}>{githubLink}</GitLink>
         </MainBottom>
       </InfoMain>
-      <Image src={props.info.imageUrl} width="100%"></Image>
+      <Image src={imageUrl} width="100%"></Image>
     </InfoBox>
     <InfoBottom> 신촌 연합 IT 창업 동아리 CEOS</InfoBottom>
   </Wrapper>
   );
-
 }
 
 //styled-component로 CSS
@@ -42,7 +52,6 @@ const Wrapper = styled.div`
 const InfoBox = styled.div`
     display: flex;
     flex-direction: row;
-    -webkit-box-pack: justify;
     justify-content: space-between;
     margin-bottom: 1.5rem;
 `;
@@ -50,7 +59,6 @@ const InfoBox = styled.div`
 const InfoMain = styled.div`
     display: flex;
     flex-direction: column;
-    -webkit-box-pack: justify;
     justify-content: space-between;
     width: 50%;
 `;
@@ -72,10 +80,10 @@ const MainBottom = styled.div`
 
 const Name_Age = styled.p`
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: bold;W
     margin-bottom: 1rem;
 `;
-const Role = styled.div`
+const Role = styled.p`
     font-size: 1.4rem;
     font-weight: bold;
 `;

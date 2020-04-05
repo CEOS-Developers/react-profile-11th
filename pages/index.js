@@ -74,9 +74,10 @@ const profiles = [
 
 const isProfileCard = () => {
   return(
-     profiles.filter(profile => profile.role !== "부회장")
+     profiles
+     .filter(profile => profile.role !== "부회장")
      .sort((a, b) => a.age - b.age)
-     .map(profile => (<ProfileCard info = {profile} key = {profile.id}/>))
+     .map(profile => (<ProfileCard {...profile} key = {profile.id}/>))
   );
 }
   
@@ -97,7 +98,6 @@ const Header = styled.p`
 const Main = styled.div`
   display: flex;
   flex-direction: row;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   flex-wrap: wrap;
 `;

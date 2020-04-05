@@ -81,7 +81,6 @@ const Wrapper = styled.div`
 const CardArea = styled.div`
   display: flex;
   flex-direction: row;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   flex-wrap: wrap;
 `;

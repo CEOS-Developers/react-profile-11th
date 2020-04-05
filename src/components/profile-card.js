@@ -2,11 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 export default function ProfileCard(props) {
+  const {
+    id,
+    name,
+    age,
+    role,
+    univ,
+    major,
+    phoneNum,
+    email,
+    githubLink,
+    imageUrl,
+  } = props;
   return (
     <CardWrapper>
       <ProfileDescImg>
-        <ProfileDesc profile={props.profile} />
-        <ProfileImg imgUrl={props.profile.imageUrl} />
+        <ProfileDesc profile={props} />
+        <ProfileImg imgUrl={imageUrl} />
       </ProfileDescImg>
       <ClubName>신촌 연합 IT 창업 동아리 CEOS</ClubName>
     </CardWrapper>

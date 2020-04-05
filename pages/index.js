@@ -7,20 +7,20 @@ export default function Home() {
   return (
     <Wrapper>
       <Title>CEOS 프론트엔드 운영진</Title>
-      <ProfileCardsWrapper>{mapToComponent(profiles)}</ProfileCardsWrapper>;
+      <ProfileCardsWrapper>
+        {profiles
+          .filter((profile) => profile.role !== "부회장")
+          .sort((a, b) => {
+            return a.age - b.age;
+          })
+          .map((profile) => (
+            <ProfileCard key={profile.id} {...profile} />
+          ))}
+      </ProfileCardsWrapper>
+      ;
     </Wrapper>
   );
 }
-
-const mapToComponent = (profiles) => {
-  // 나이 순으로 정렬
-  profiles.sort((a, b) => a.age - b.age);
-  return profiles.map((profileData, i) => {
-    // 부회장을 제외하기 위한 조건문
-    if (profileData.role !== "부회장")
-      return <ProfileCard profile={profileData} key={i} />;
-  });
-};
 
 const profiles = [
   {

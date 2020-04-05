@@ -17,7 +17,7 @@ export default function Home() {
   );
 }
 
-  const profiles = [
+const profiles = [
      {
        id: 1,
        name: "박효진",
@@ -70,22 +70,23 @@ export default function Home() {
        imageUrl:
         "https://static.wixstatic.com/media/69e8c2_43446e9ac65e4f129083516175259a2b~mv2.jpeg/v1/crop/x_0,y_910,w_3024,h_3122/fill/w_347,h_351,al_c,q_80,usm_0.66_1.00_0.01/%E1%84%8E%E1%85%AC%E1%84%89%E1%85%AE%E1%84%86%E1%85%B5%E1%86%AB.webp"
      }
-  ] 
+] 
 
-  const Profile = () => {
+const Profile = () => {
     
-    profiles.sort((a, b) => a.age - b.age);
-    if(profiles.role != "부회장"){
+    const profile = profiles.filter(profile => profile.role != "부회장");
+    profile.sort((a, b) => a.age - b.age);
+
     return(   
-        profiles.map((profile,key) => (
-          <ProfileCard info = {profile} key ={profile.id}/>
-        ))
-      );
-    }
+      profile.map((pro,key) => (
+          <ProfileCard info = {pro} key ={profile.id}/>
+      ))
+    );
   }
   
 const Wrapper = styled.div`
 display: flex;
+
 flex-direction: column;
 min-height: 100vh;
 background-color: rgb(230, 255, 255);
